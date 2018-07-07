@@ -1,0 +1,14 @@
+*.iml
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+MyNpm/node_modules/
+app/build/
+gradle/
+gradlew
+gradle
+gradlew.bat
+.gradle/
