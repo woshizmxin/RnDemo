@@ -7,7 +7,7 @@ class RNJSFirstComponent extends React.Component {
     render() { //render函数返回要渲染的布局
         return (
             <View style={styles.container}>
-            <Text style={styles.textsty}>Hi Jamal</Text>
+            <Text style={styles.textsty}>Hi Jamal Jo</Text>
             </View> )
             }
         }

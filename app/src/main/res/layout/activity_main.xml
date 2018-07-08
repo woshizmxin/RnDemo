@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.marsthink.rndemo.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.marsthink.rndemo.com.marsthink.MainActivity">
 
     <Button
         android:id="@+id/rn_btn1"
@@ -17,6 +18,6 @@
         android:id="@+id/rn_btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rn2Activity" />
+        android:text="RnMixActivity" />
 
 </LinearLayout>
