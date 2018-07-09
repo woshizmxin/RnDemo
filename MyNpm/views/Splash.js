@@ -6,7 +6,9 @@ import {
     Platform,
 } from 'react-native';
 
+import Login from './Login'
 import NetTest from '../utils/NetTest'
+
 
 /**
  * 启动界面
@@ -50,13 +52,13 @@ export default class Splash extends Component{
             if(navigator){
                 navigator.push({
                     name:'登录界面',
-                    component:NetTest,
+                    component:Login,
                     params:{
                         data:'login test',
                     }
                 });
             }
-        },2000);
+        },200);
     }
 
     render(){
