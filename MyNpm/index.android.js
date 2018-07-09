@@ -1,6 +1,6 @@
 'use strict'; //js文件的生命 使用严格模式
 import React, {Component} from 'react'; //导入React的依赖
-import {AppRegistry, StyleSheet, Text, View} from 'react-native'; //从react-native包中导入我们需要用的控件，这些控件都是fb官方帮我们在js端封装过的，对应的在native端也已经按照规则暴露并注册过了即在2.4的getPackages()中我们z注册的MainReactPackage
+import {AppRegistry, StyleSheet,TextInput, Text, View} from 'react-native'; //从react-native包中导入我们需要用的控件，这些控件都是fb官方帮我们在js端封装过的，对应的在native端也已经按照规则暴露并注册过了即在2.4的getPackages()中我们z注册的MainReactPackage
 
 
 /**
@@ -98,6 +98,12 @@ const styles = StyleSheet.create({
     },
 });
 
+
+/**
+ * FlexBox
+ *
+ */
+
 class FlexBasicDemo extends Component {
     render() {
         return (
@@ -162,6 +168,31 @@ class AlignItemsBasics extends Component {
     }
 };
 
+/**
+ * TextInput
+ */
+class PizzaTranslator extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {text: ''};
+    }
+
+    render() {
+        return (
+            <View style={{padding: 10}}>
+                <TextInput
+                    style={{height: 40}}
+                    placeholder="Type here to translate!"
+                    onChangeText={(text) => this.setState({text})}
+                />
+                <Text style={{padding: 10, fontSize: 42}}>
+                    {this.state.text}
+                </Text>
+            </View>
+        );
+    }
+}
+
 
 
 
@@ -169,4 +200,4 @@ class AlignItemsBasics extends Component {
  * JS端注册要暴漏出去的组件 前边引号内的名字需要与我们
  * 在Native端声明的要加载到native端的组件名字（2.4步骤中getMainComponentName）相同
  * */
-AppRegistry.registerComponent('RNFirstComponent', () => AlignItemsBasics);
+AppRegistry.registerComponent('RNFirstComponent', () => PizzaTranslator);
