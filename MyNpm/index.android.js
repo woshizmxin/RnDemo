@@ -9,12 +9,12 @@ import {AppRegistry, StyleSheet, Text, View} from 'react-native'; //从react-nat
 class Blink extends Component {
     constructor(props) {
         super(props);
-        this.state = { showText: true };
+        this.state = {showText: true};
 
         // 每1000毫秒对showText状态做一次取反操作
         setInterval(() => {
             this.setState(previousState => {
-                return { showText: !previousState.showText };
+                return {showText: !previousState.showText};
             });
         }, 1000);
     }
@@ -32,15 +32,14 @@ export default class BlinkApp extends Component {
     render() {
         return (
             <View>
-                <Blink text='I love to blink' />
-                <Blink text='Yes blinking is so great' />
-                <Blink text='Why did they ever take this out of HTML' />
-                <Blink text='Look at me look at me look at me' />
+                <Blink text='I love to blink'/>
+                <Blink text='Yes blinking is so great'/>
+                <Blink text='Why did they ever take this out of HTML'/>
+                <Blink text='Look at me look at me look at me'/>
             </View>
         );
     }
 }
-
 
 
 /**
@@ -69,8 +68,39 @@ class LotsOfGreetings extends Component {
 }
 
 
+/**
+ * style实践例子
+ * 后声明的属性会覆盖先声明的同名属性
+ */
+
+class LotsOfStyles extends Component {
+    render() {
+        return (
+            <View>
+                <Text style={styles.red}>just red</Text>
+                <Text style={styles.bigblue}>just bigblue</Text>
+                <Text style={[styles.bigblue, styles.red]}>bigblue, then red</Text>
+                <Text style={[styles.red, styles.bigblue]}>red, then bigblue</Text>
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    bigblue: {
+        color: 'blue',
+        fontWeight: 'bold',
+        fontSize: 30,
+    },
+    red: {
+        color: 'red',
+        fontSize:20
+    },
+});
+
+
 /*
  * JS端注册要暴漏出去的组件 前边引号内的名字需要与我们
  * 在Native端声明的要加载到native端的组件名字（2.4步骤中getMainComponentName）相同
  * */
-AppRegistry.registerComponent('RNFirstComponent', () => BlinkApp);
+AppRegistry.registerComponent('RNFirstComponent', () => LotsOfStyles);
