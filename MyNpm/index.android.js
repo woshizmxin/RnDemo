@@ -28,7 +28,7 @@ class Blink extends Component {
     }
 }
 
-export default class BlinkApp extends Component {
+class BlinkApp extends Component {
     render() {
         return (
             <View>
@@ -98,9 +98,75 @@ const styles = StyleSheet.create({
     },
 });
 
+class FlexBasicDemo extends Component {
+    render() {
+        return (
+            <View style={{flex:1}}>
+                <View style={{flex:1, backgroundColor: 'powderblue'}} />
+                <View style={{flex:2, backgroundColor: 'skyblue'}} />
+                <View style={{flex:3, backgroundColor: 'steelblue'}} />
+            </View>
+        );
+    }
+};
+
+
+class FlexDirectionBasics extends Component {
+    render() {
+        return (
+            // 尝试把`flexDirection`改为`column`看看
+            <View style={{flex: 1, flexDirection: 'row'}}>
+                <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+                <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+                <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+            </View>
+        );
+    }
+};
+
+class JustifyContentBasics extends Component {
+    render() {
+        return (
+            // 尝试把`justifyContent`改为`center`看看
+            // 尝试把`flexDirection`改为`row`看看
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+            }}>
+                <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+                <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+                <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+            </View>
+        );
+    }
+};
+
+class AlignItemsBasics extends Component {
+    render() {
+        return (
+            // 尝试把`alignItems`改为`flex-start`看看
+            // 尝试把`justifyContent`改为`flex-end`看看
+            // 尝试把`flexDirection`改为`row`看看
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-end',
+            }}>
+                <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+                <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+                <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+            </View>
+        );
+    }
+};
+
+
+
 
 /*
  * JS端注册要暴漏出去的组件 前边引号内的名字需要与我们
  * 在Native端声明的要加载到native端的组件名字（2.4步骤中getMainComponentName）相同
  * */
-AppRegistry.registerComponent('RNFirstComponent', () => LotsOfStyles);
+AppRegistry.registerComponent('RNFirstComponent', () => AlignItemsBasics);
