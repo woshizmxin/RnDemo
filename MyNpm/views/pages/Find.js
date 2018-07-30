@@ -3,11 +3,12 @@ import React, {Component} from 'react'; //导入React的依赖
 import {
     Text,
 } from 'react-native';
+import StoryList from "../components/StoryList";
 
 export default class Find extends Component {
     render() {
-        return (
-            <Text>Find</Text>
+        return (<StoryList>
+            </StoryList>
         );
     }
 }

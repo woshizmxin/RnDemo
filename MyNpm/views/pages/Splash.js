@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import Login from './Login'
-import NetTest from '../utils/NetTest'
+import NetTest from '../../utils/NetTest'
 
 
 /**

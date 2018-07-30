@@ -5,7 +5,8 @@ import {
 import {
     Navigator
 } from 'react-native-deprecated-custom-components'
-import Splash from './views/Splash';
+import Splash from './views/pages/Splash';
+import Home from "./views/Home";
 
 class Index extends Component {
 
@@ -16,7 +17,7 @@ class Index extends Component {
     render() {
         return (
             <Navigator
-                initialRoute={{name: '欢迎界面', component: Splash}}
+                initialRoute={{name: '欢迎界面', component: Home}}
                 configureScene={() => Navigator.SceneConfigs.FloatFromBottom}
                 renderScene={(route, navigator) => {
                     //返回按钮

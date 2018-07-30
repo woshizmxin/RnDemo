@@ -199,10 +199,10 @@ class IScrolledDownAndWhatHappenedNextShockedMe extends Component {
         return (
             <ScrollView>
                 <Text style={{fontSize: 20}}>Scroll me plz</Text>
-                <Image style={{height: 40, width: 40}} source={require('./img/hi.jpeg')}/>
+                <Image style={{height: 40, width: 40}} source={require('./views/img/hi.jpeg')}/>
                 <Text style={{fontSize: 20}}>If you like</Text>
-                <Image style={{height: 40, width: 40}} source={require('./img/hi.jpeg')}/>
-                <Image style={{height: 40, width: 40}} source={require('./img/hi.jpeg')}/>
+                <Image style={{height: 40, width: 40}} source={require('./views/img/hi.jpeg')}/>
+                <Image style={{height: 40, width: 40}} source={require('./views/img/hi.jpeg')}/>
                 <Text style={{fontSize: 20}}>React Native</Text>
             </ScrollView>
         );

@@ -9,9 +9,9 @@ import {
     TouchableHighlight,
     AsyncStorage,
 } from 'react-native';
-import NetUtils from '../utils/NetUtils';
-import NetTest from '../utils/NetTest'
-import Home from './Home'
+import NetUtils from '../../utils/NetUtils';
+import NetTest from '../../utils/NetTest'
+import Home from '../Home'
 
 
 /**
