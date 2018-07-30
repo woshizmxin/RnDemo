@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import NetUtils from '../utils/NetUtils';
 import NetTest from '../utils/NetTest'
+import Home from './Home'
+
 
 /**
  * 登录界面
@@ -40,7 +42,7 @@ export default class Login extends Component {
         if (navigator) {
             navigator.push({
                 name: '主界面',
-                component: NetTest,
+                component: Home,
             });
         }
         // NetUtils.post(url, service, params, (result) => {
