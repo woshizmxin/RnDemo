@@ -32,9 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RNActivity">
+        <activity android:name="com.marsthink.rn.RNActivity">
         </activity>
-        <activity android:name=".RnMixActivity">
+        <activity android:name="com.marsthink.rn.activity.RnMixActivity">
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.marsthink.rndemo;
+package com.marsthink.rn;
 
 import com.facebook.react.ReactActivity;
 

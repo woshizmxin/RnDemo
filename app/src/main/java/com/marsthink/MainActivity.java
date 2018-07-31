@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.marsthink.rndemo.R;
-import com.marsthink.rndemo.RNActivity;
-import com.marsthink.rndemo.RnMixActivity;
+import com.marsthink.rn.RNActivity;
+import com.marsthink.rn.activity.RnMixActivity;
 
 public class MainActivity extends AppCompatActivity {
 

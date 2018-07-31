@@ -1,4 +1,4 @@
-package com.marsthink.rndemo;
+package com.marsthink.rn.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
+import com.marsthink.rndemo.R;
 
 /**
  * Created by zhoumao on 2018/7/8.
