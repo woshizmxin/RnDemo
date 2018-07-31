@@ -3,6 +3,7 @@ package com.marsthink.rn.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.facebook.react.ReactInstanceManager;
@@ -10,6 +11,7 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
+import com.marsthink.rn.utils.RnUtil;
 import com.marsthink.rndemo.R;
 
 /**
@@ -42,6 +44,14 @@ public class RnMixActivity extends Activity implements DefaultHardwareBackBtnHan
         // () => ReactNativeView)的ReactNativeView
         mReactRootView.startReactApplication(mReactInstanceManager, "RNFirstComponent", null);
         linearLayout.addView(mReactRootView);
+
+        findViewById(R.id.native_text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RnUtil.sendEvent(mReactInstanceManager.getCurrentReactContext(), "rn_name",
+                        "这是从原生发送来的消息");
+            }
+        });
     }
 
     @Override

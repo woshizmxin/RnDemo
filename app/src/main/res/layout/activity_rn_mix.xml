@@ -7,6 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:id="@+id/native_text"
         android:background="#9DB16D"
         android:gravity="center"
         android:text="原生控件"

@@ -3,7 +3,7 @@ import React, {Component} from 'react'; //导入React的依赖
 import {
     View,
     StyleSheet,
-    Dimensions
+    Dimensions, DeviceEventEmitter,
 } from 'react-native';
 import StoryList from "../components/StoryList";
 import TopIcons from "../components/TopIcons";
@@ -15,6 +15,13 @@ const {screenWidth, screenHeight} = Dimensions.get('window');
 
 
 export default class Index extends Component {
+
+    componentDidMount() {
+        DeviceEventEmitter.addListener("rn_name", (reminder) => {
+            alert(reminder);
+        });
+    };
+
     render() {
         return (
             <View style={styles.container}>
