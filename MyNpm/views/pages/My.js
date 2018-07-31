@@ -4,7 +4,9 @@ import {
     View,
     Image,
     StyleSheet,
-    Dimensions, processColor
+    Dimensions,
+    processColor,
+    NativeModules
 } from 'react-native';
 import RCTCircle from '../rn/circle';
 
@@ -12,8 +14,23 @@ import RCTCircle from '../rn/circle';
 const {screenWidth, screenHeight} = Dimensions.get('window');
 
 
-export default class Index extends Component {
+export default class My extends Component {
     render() {
+        let rnToastAndroid = NativeModules.ToastByAndroid;
+        //1. 调原生代码
+        rnToastAndroid.getPackageName();
+        // 2. 调原生代码，并拿到值；
+        rnToastAndroid.tryCallBack("luo", "131", (errorCallback) => {
+            alert(errorCallback)
+        }, (successCallback) => {
+            alert(successCallback);
+        });
+        //3. Promise ES6 语法实现回调
+        rnToastAndroid.tryPromise('luo', '131').then((map)=> {
+            alert(map['user_id']);}, (code, message)=> {
+            alert(message);
+        });
+
         return (
             <View style={styles.container}>
                 <RCTCircle style={styles.RCTCircle}
@@ -29,9 +46,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     RCTCircle: {
-        flex:1,
+        flex: 1,
         flexDirection: 'column',
-        alignItems:'center',
-        justifyContent:'center',
+        alignItems: 'center',
+        justifyContent: 'center',
     }
 });
